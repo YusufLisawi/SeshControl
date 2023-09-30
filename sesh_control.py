@@ -60,7 +60,7 @@ def screenshot_handler(message):
 def image_handler(message):
     my_uuid = str(uuid.uuid4())
     file_path = f"/tmp/image_{my_uuid}.jpg"
-    bot.reply_to(message, "Sending screenshot...")
+    bot.reply_to(message, "Taking image...")
     os.system(f"imagesnap {file_path}")
     bot.send_photo(message.chat.id, photo=open(file_path, 'rb'))
 
